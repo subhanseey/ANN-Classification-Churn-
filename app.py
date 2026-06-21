@@ -9,11 +9,11 @@ st.title('Customer Churn Prediction')
 # ----------------- CACHE MODEL -----------------
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("model.keras")
+    return tf.keras.models.load_model("model.keras", compile=False)
 
 model = load_model()
 
-# ----------------- CACHE ENCODERS -----------------
+# ----------------- CACHE ARTIFACTS -----------------
 @st.cache_resource
 def load_artifacts():
     with open('label_encoder_gender.pkl', 'rb') as file:
