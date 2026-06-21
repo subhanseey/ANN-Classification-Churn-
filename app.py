@@ -9,7 +9,7 @@ st.title('Customer Churn Prediction')
 # ----------------- CACHE MODEL -----------------
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("model.keras", compile=False)
+    return tf.keras.models.load_model("model_fixed.keras", compile=False)
 
 model = load_model()
 
@@ -73,4 +73,3 @@ if st.button("Predict"):
         st.error("The customer is likely to churn.")
     else:
         st.success("The customer is not likely to churn.")
-        
